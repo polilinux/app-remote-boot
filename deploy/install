@@ -1,0 +1,14 @@
+#!/bin/bash
+# this script checks if /usb/sbin/exports is in the sudoers list for the
+# Cmnd_Alias CC, which is a group of sudoers.
+CMD=/usr/sbin/exportfs
+
+LINE=`grep "^Cmnd_Alias CC" /etc/sudoers 2>/dev/null`
+CHECK=`echo $LINE, | grep $CMD,`
+
+if [ -z "$CHECK" ]; then
+    ESCAPE=`echo $CMD | sed 's/\//\\\\\//g'`
+    sed -i -e "s/Cmnd_Alias CC.*=/Cmnd_Alias CC = $ESCAPE,/i" /etc/sudoers
+    sed -i -e "s/[[:space:]]*,[[:space:]]*$//i" /etc/sudoers
+    chmod 440 /etc/sudoers
+fi

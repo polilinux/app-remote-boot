@@ -1,0 +1,9 @@
+#!/bin/bash
+
+RM_F="/usr/bin/rm -rf"
+
+APP_CFG_FILE="/etc/clearos/remote-boot.conf"
+
+if [ -f "$APP_CFG_FILE" ]; then
+    $RM_F $APP_CFG_FILE
+fi
