@@ -194,8 +194,8 @@ $lang['field_global_tftp_name_help'] = 'The hostname of the TFTP server. This ho
     '(e.g. server.lan). Default: local machine hostname.';
 $lang['field_global_tftp_ip_help'] = 'Fill out with the IP address of the TFTP server where you want to get initrd and '.
     'vmlinuz images from';
-$lang['field_global_tftp_rootfolder_help'] = "This is the root folder of the TFTP server. It is always created even if '.
-    'we don't manage TFTP for you";
+$lang['field_global_tftp_rootfolder_help'] = 'This is the root folder of the TFTP server. It is always created even if '.
+    'we don\'t manage TFTP for you';
 $lang['field_global_tftp_cfgfile_help'] = 'This file is only created if TFTP automatic management is enabled. You '.
     'cannot edit the location of this file.';
 $lang['field_global_nfs_automanage_help'] = 'If enabled, we will manage a local nfs-server service for you.';
